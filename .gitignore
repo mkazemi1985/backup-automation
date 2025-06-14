@@ -1,0 +1,10 @@
+# Ignore backup archives
+*.zip
+
+# Ignore logs
+*.log
+*log.txt
+
+# PowerShell backup temp or swap files
+*.ps1~*
+*.ps1.bak

@@ -1,0 +1,12 @@
+# Ignore backup archive files
+*.zip
+
+# Ignore log files
+*log.txt
+
+# PowerShell temp files
+*.ps1~*
+*.ps1.bak
+
+# Exclude generated folders (optional)
+Backup-Storage/
