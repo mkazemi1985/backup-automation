@@ -23,26 +23,22 @@ This project provides an automated solution to back up a folder daily using Powe
 
 ## Configuration
 
-Edit `BackupScript.ps1` to modify the following paths:
+Open the `BackupScript.ps1` file and modify the following paths to match your own system:
 
 ```powershell
-$sourcePath = "F:\IT-Networking\Projects\02-Backup-Automation\LAB-DATA"
-$backupPath = "F:\IT-Networking\Projects\02-Backup-Automation\Backup-Storage"
-$logPath = "F:\IT-Networking\Projects\02-Backup-Automation\backup_log.txt"
+$sourcePath = "C:\Path\To\Your\Data\Folder"
+$backupPath = "D:\Path\To\Your\Backup\Folder"
+$logPath    = "C:\Path\To\Your\Project\backup_log.txt"
 ```
 
 ## Schedule with Task Scheduler
 
-Create a task to run daily using this command:
+To schedule the script, create a new task and use the following action:
 
+```powershell
+powershell.exe -ExecutionPolicy Bypass -File "C:\Path\To\Your\Project\BackupScript.ps1"
 ```
-powershell.exe -ExecutionPolicy Bypass -File "F:\IT-Networking\Projects-Backup-Automation\BackupScript.ps1"
-```
 
-Set it to run with highest privileges.
-
-## Notes
-
-- Make sure execution policy allows the script: `Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned`
-- Ensure Task Scheduler is enabled and running
-
+Make sure to:
+- Run the task with highest privileges
+- Set the trigger (e.g., daily at 21:00)
